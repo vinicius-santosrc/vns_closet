@@ -10,6 +10,7 @@ import './App.css';
 /* PAGES */
 
 import Index from './pages/Index';
+import Camisetas from './pages/Categorias/Camisetas'
 
 
 
@@ -19,6 +20,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Index />} />
+          <Route path="/camisetas" element={<Camisetas />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
