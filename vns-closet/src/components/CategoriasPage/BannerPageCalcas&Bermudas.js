@@ -1,8 +1,8 @@
-import { Query } from "appwrite"
-import { databases } from "../../lib/appwrite"
+import { Query } from "appwrite";
+import { databases } from "../../lib/appwrite";
 import { useEffect, useState } from "react";
 
-export default function BannerPageCamisas() {
+export default function BannerPageCalcas_Bermudas() {
     const [QuantidadeProdutos, setQuantidadeProdutos] = useState(null)
 
     async function getQuantProducts() {
@@ -15,7 +15,7 @@ export default function BannerPageCamisas() {
                 Produtos,
                 [
                     Query.limit(200),
-                    Query.equal("type", "Camisetas"),
+                    Query.equal("type", "CalçasBermudas"),
                     Query.orderDesc("$createdAt"),
 
                 ]
@@ -33,16 +33,15 @@ export default function BannerPageCamisas() {
         getQuantProducts()
     }, [])
 
-
     return (
         <>
             <section class="image-calcados camisetas-banner" >
-                <h1>CAMISETAS</h1>
+                <h1>CALÇAS E BERMUDAS</h1>
                 <img class="camisetas-banner-1" src="arquivos/camisetas-banner.png" alt="" />
             </section>
             <section className="Results-of-Type-Select">
                 <label className="caminho">VNS-CLOSET{(window.location.pathname).toUpperCase()}</label>
-                <h2>Mostrando {QuantidadeProdutos} de camisetas</h2>
+                <h2>Mostrando {QuantidadeProdutos} de Calças e Bermudas</h2>
             </section>
         </>
 

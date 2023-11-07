@@ -11,6 +11,12 @@ import './App.css';
 
 import Index from './pages/Index';
 import Camisetas from './pages/Categorias/Camisetas'
+import Workout from './pages/Categorias/Workout';
+import Futebol from './pages/Categorias/Futebol';
+import CalcasBermudas from './pages/Categorias/CalcasBermudas';
+import Basquete from './pages/Categorias/Basquete';
+import Calcados from './pages/Categorias/Calcados';
+import ProdutoPage from './pages/ProdutoPage';
 
 
 
@@ -21,6 +27,13 @@ function App() {
         <Routes>
           <Route path='/' element={<Index />} />
           <Route path="/camisetas" element={<Camisetas />}></Route>
+          <Route path="/workout" element={<Workout />}></Route>
+          <Route path="/futebol" element={<Futebol />}></Route>
+          <Route path="/calcas&bermudas" element={<CalcasBermudas />}></Route>
+          <Route path="/basquete" element={<Basquete />}></Route>
+          <Route path="/calcados" element={<Calcados />}></Route>
+
+          <Route path='/produtos/:PRODUTO_NOME' element={<ProdutoPage />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

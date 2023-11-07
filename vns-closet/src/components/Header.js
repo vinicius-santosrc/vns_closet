@@ -6,6 +6,18 @@ export default function Header() {
             <Link to={window.location.origin} className="Header-Styled-closet leftside-header">
                     <img src={window.location.origin + "/arquivos/vss-closet-logo-io.png"} alt="" />
                     <h1>VNS CLOSET</h1></Link>
+             
+            <div className="Header-Styled-closet center-header">
+                <ul className="CentralizedStyledHeader">
+                    <li><Link to={window.location.origin + "/workout"}>Workout</Link></li>
+                    <li><Link to={window.location.origin + "/camisetas"}>Camisetas</Link></li>
+                    <li><Link to={window.location.origin + "/futebol"}>Futebol</Link></li>
+                    <li><Link to={window.location.origin + "/calcas&bermudas"}>Calças e Bermudas</Link></li>
+                    <li><Link to={window.location.origin + "/basquete"}>Basquete</Link></li>
+                    <li><Link to={window.location.origin + "/calcados"}>Calçados</Link></li>
+
+                </ul>
+            </div>       
             <div className="Header-Styled-closet rightside-header">
                 <button className="AccountButton-styled ButtonWrapper-header-styled" title="Minha conta">
                     <span className="AccountButton-styled_IconContainer" aria-hidden="true">
@@ -24,9 +36,16 @@ export default function Header() {
                 </button>
             </div>
             <div className="Header-Styled-closet rightside-header-mobile">
+                
                 <button className="MenuButton-styled ButtonWrapper-header-styled" title="Minha conta">
                     <span className="MenuButton-styled_IconContainer" aria-hidden="true">
                         <i className="fa-solid fa-bars"></i>
+                    </span>
+                </button>
+                
+                <button className="CartButton-styled ButtonWrapper-header-styled" title="Sua sacola">
+                    <span className="CartButton-styled_IconContainer" aria-hidden="true">
+                        <i className="fa-solid fa-bag-shopping"></i>
                     </span>
                 </button>
                 

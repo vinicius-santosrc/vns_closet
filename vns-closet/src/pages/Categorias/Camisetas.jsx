@@ -17,7 +17,9 @@ export default function Camisetas() {
         <>
             <Header />
             <BannerPageCamisas />
-            <ProdutosShow />
+            <ProdutosShow
+                type={"Camisetas"}
+            />
         </>
     )
 }
