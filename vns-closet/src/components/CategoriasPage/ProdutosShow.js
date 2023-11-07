@@ -65,6 +65,18 @@ export default function ProdutosShow(typeproduct) {
                     }
                     else {
                         setProdutos(response.documents.map((produto) => {
+                            let disp
+                            if(produto.disponibilidade) {
+                                if(produto.Encomenda) {
+                                    disp = 'encomenda'
+                                }
+                                else {
+                                    disp = 'disponivel'
+                                }
+                            }
+                            else {
+                                disp = 'indisponivel'
+                            }
                             return (
                                 <Link to={window.location.origin + "/produtos/" + produto.url}>
                                     <div className="item-card">
@@ -73,7 +85,7 @@ export default function ProdutosShow(typeproduct) {
                                         </div>
                                         <div className="item-inside">
                                             <img src={produto.fotos.length > 0 ? produto.fotos[0] : produto.fotos} alt="" />
-                                            <h2 className={"type " + produto.disponibilidade}>{produto.disponibilidade ? "Disponível" : "Esgotado"}</h2>
+                                            <h2 className={disp}>{produto.disponibilidade ? <>{produto.Encomenda ? 'Encomenda' : "Disponível"}</> : "Esgotado"}</h2>
                                             <p className="name-item">{produto.nome} </p>
                                             {produto.desconto > 0 ?
                                                 <p className="price-item"><s className="desconto">R${(produto.price).toFixed(2)}</s> R$ {(produto.price - produto.desconto).toFixed(2)}</p>

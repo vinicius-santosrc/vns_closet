@@ -36,7 +36,7 @@ export default function BannerPageFutebol() {
         <>
             <section class="image-calcados camisetas-banner" >
                 <h1>FUTEBOL</h1>
-                <img class="camisetas-banner-1" src="arquivos/camisetas-banner.png" alt="" />
+               
             </section>
             <section className="Results-of-Type-Select">
                 <label className="caminho">VNS-CLOSET{(window.location.pathname).toUpperCase()}</label>
