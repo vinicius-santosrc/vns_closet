@@ -284,7 +284,7 @@ header .rightside-header a {
     transition: 500ms;
 }
 
-.filterbox h2{
+.filterbox h2 {
     padding: 10px 0px;
     border-top: 1px solid #c3c3c3;
 
@@ -819,9 +819,8 @@ img.sun {
     0% {
         margin-left: 150%;
     }
-    100% {
 
-    }
+    100% {}
 }
 
 .HeaderMenuStyled {
@@ -843,6 +842,8 @@ img.sun {
     width: 30px;
 }
 
+
+
 .HeaderMenuStyled .leftside-header h1 {
     margin-left: 0px;
     font-size: 21px;
@@ -851,6 +852,183 @@ img.sun {
     color: black;
 
 }
+
+.background-sacola-inner {
+    background: rgba(0, 0, 0, 0.501);
+    z-index: 40;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.SacolaShow-Styled-Menu {
+    right: 0;
+    position: fixed;
+    top: 0;
+    z-index: 41;
+    background: white;
+    width: 500px;
+    animation: openSacola 0.3s ease-out;
+    height: 100%;
+}
+
+.HeaderMenuStyled button{
+    background-color: transparent;
+    padding:  0 10px;
+    border: none;
+    outline: none;
+    color: black;
+    font-size: 19px;
+}
+
+.SacolaItensInnerWrapper {
+    height: 65%;
+    overflow-y: auto;
+}
+
+.SacolaTitleH1-Styled h1{
+    font-size: 22px;
+}
+
+.Sacola_ButtonInnerWrapper {
+    background: transparent;
+    padding: 10px;
+    border: none;
+    font-size: 25px;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.Sacola_ButtonInnerWrapper:hover {
+   color: #827f7f;
+}
+
+.SacolaShow-closing {
+    animation: fecharSacola 0.3s ease-in;
+}
+
+.SacolaBottomCheckout {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px 40px;
+    margin: auto;
+}
+
+.CheckoutButtonSacola {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    background: black;
+    color: white;
+    border: none;
+    padding: 15px 0px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0px;
+    transition: 500ms;
+}
+
+.CheckoutButtonSacola:hover {
+    box-shadow: 5px 5px 0px gray;
+}
+
+.SacolaShow-Header-Styled {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    align-items: center;
+    border-bottom: 1px solid #dfdede;
+}
+
+.ListSacolaItens {
+    padding: 20px 40px;
+}
+
+.ListSacolaItens li {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.SacolasTamanho_Cor {
+    color: gray;
+}
+
+.PrecosSacola {
+    display: flex;
+    justify-content: space-between;
+}
+
+.noItemSacola {
+    text-align: center;
+    margin-top: 70%;    
+}
+
+
+.noItemSacola button {
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 10px 60px;
+    margin: 10px 0px;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.HeaderSacolaShow--item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.HeaderSacolaShow--item button{
+    color: red;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.noItemSacola button:hover {
+    box-shadow: 5px 5px 0px gray;
+}
+
+.SacolaShow_PhotoURL__sacola--item img{
+    width: 130px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px gray;
+}
+
+.SacolaShow-Header-Styled img {
+    width: 50px;
+}
+
+
+@keyframes openSacola {
+    0% {
+        transform: translateX(200%);
+    }
+
+    100% {}
+}
+
+@keyframes fecharSacola {
+    0% {}
+
+    100% {
+        transform: translateX(200%);
+    }
+}
+
 
 .MiddleHeaderStyled {
     padding: 20px;
@@ -869,9 +1047,8 @@ img.sun {
 }
 
 @keyframes closemenu {
-    0% {
+    0% {}
 
-    }
     100% {
         margin-left: 150%;
     }
@@ -1788,7 +1965,7 @@ img.sun {
         border-radius: 10px;
         padding: 10px;
         margin-top: 20px;
-        display: none;
+        display: block;
     }
 
     /* FOOTER */
@@ -2384,7 +2561,7 @@ img.sun {
     .CentralizedStyledHeader {
         display: none;
     }
-    
+
     .pc-bottom {
         display: none;
     }
@@ -2411,6 +2588,7 @@ img.sun {
         display: block;
         width: 100%;
     }
+
     .filters-show-leftside {
         display: none;
     }
@@ -2419,4 +2597,31 @@ img.sun {
         width: 100%;
         padding: 5px 20px;
     }
+
+    .SacolaShow-Styled-Menu {
+        right: 0;
+        position: fixed;
+        top: 0;
+        z-index: 41;
+        background: white;
+        width: 90%;
+        animation: openSacola 0.3s ease-out;
+        height: 100%;
+    }
+
+    .SacolaBottomCheckout, .ListSacolaItens,  .SacolaShow-Header-Styled{
+        padding: 20px
+    }
+
+    @keyframes fecharSacola {
+        0% {}
+    
+        100% {
+            transform: translateX(300%);
+            -webkit-transform: translateX(300%);
+            margin-left: 150%;
+        }
+    }
+    
+
 }
