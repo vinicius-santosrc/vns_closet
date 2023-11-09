@@ -899,6 +899,7 @@ img.sun {
     font-size: 25px;
     transition: 500ms;
     cursor: pointer;
+    color: black;
 }
 
 .Sacola_ButtonInnerWrapper:hover {
@@ -1003,9 +1004,22 @@ img.sun {
 }
 
 .SacolaShow_PhotoURL__sacola--item img{
-    width: 130px;
+    width: 100px;
     cursor: pointer;
     box-shadow: 4px 4px 0px gray;
+}
+
+.HeaderSacolaShow--item h3 {
+    font-size: 17px;
+}
+
+.SacolasTamanho_Cor h4 {
+    font-size: 14px;
+} 
+
+.SacolaBottomCheckout {
+    font-size: 12px;
+    border-top: 1px solid #dfdede;
 }
 
 .SacolaShow-Header-Styled img {
@@ -1550,6 +1564,138 @@ img.sun {
     padding: 10px;
     width: auto;
     width: 450px;
+}
+
+.LoginPageContent {
+    margin-bottom: -110px;
+}
+
+.Login-Content-Box-Temp {
+    display: flex;
+    justify-content: space-between;
+}
+
+.LoginPage_BannerLeftSide-content {
+    width: 100%;
+    height: 87vh;
+    text-align: center;
+    align-items: center;
+    background: black;
+    position: relative;
+}
+
+.LoginPage_BannerLeftSide-content img{
+    width: 95%;
+    height: 90.6vh;
+    position: absolute;
+    left: 00px;
+    top: -20px;
+    object-fit: cover;
+    filter: brightness(0.8);
+    pointer-events: none;
+}
+
+.RegisterLinkPage {
+    text-align: right;
+    margin: 10px 0px;
+}
+
+.SucessBox-show {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(2, 170, 19);
+    color: white;
+    margin: 10px 0px;
+}
+
+.SucessBox-show a {
+    color: white;
+}
+
+.RegisterLinkPage a{
+    color: rgb(80, 2, 174);
+}
+
+.BoxInput-inner-box {
+    display: block;
+    margin: 10px 0px;
+}
+
+.BoxInput-inner-box p {
+    font-size: 18px;
+}
+
+.BoxInput-inner-box input {
+    width: 100%;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 0px;
+    margin: 5px 0px;
+    padding: 10px;
+}
+
+.HeaderLoginContent img {
+    width: 80px;
+    pointer-events: none;
+    margin: 10px 0px;
+}
+
+.HeaderLoginContent h2 {
+    font-size: 30px;
+    text-align: left;
+}
+
+.BoxButton-Confirm  {
+    text-align: center;
+}
+
+.BoxButton-Confirm button{
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 13px 100px;
+    margin: auto;
+    text-align: center; 
+    transition: 500ms;
+}
+
+.BoxButton-Confirm button:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 0px gray;
+}
+
+.HeaderLoginContent {
+    text-align: left;
+}
+
+.LoginPage_Content-Login--box {
+    width: 60%;
+    padding: 00px 50px;
+    position: relative;
+    align-items: center;
+    margin-top: 5%;
+    
+}
+
+.fixedHeader {
+    color: white;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.fixedHeader h1 {
+    font-size: 150px;
+    font-weight: 600;
+    text-shadow: 5px 5px 0px gray;
+    cursor: default;
+    pointer-events: none;
 }
 
 @media screen and (max-width: 980px) {
@@ -2622,6 +2768,138 @@ img.sun {
             margin-left: 150%;
         }
     }
+    .LoginPageContent {
+        margin-bottom: -110px;
+    }
     
+    .Login-Content-Box-Temp {
+        display: block;
+        justify-content: center;
+    }
+    
+    .LoginPage_BannerLeftSide-content {
+        width: 100%;
+        height: 87vh;
+        text-align: center;
+        align-items: center;
+        background: black;
+        position: relative;
+    }
+    
+    .LoginPage_BannerLeftSide-content img{
+        width: 95%;
+        height: 90.6vh;
+        position: absolute;
+        left: 00px;
+        top: -20px;
+        object-fit: cover;
+        filter: brightness(0.8);
+        pointer-events: none;
+    }
+    
+    .RegisterLinkPage {
+        text-align: right;
+        margin: 10px 0px;
+    }
+    
+    .SucessBox-show {
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(2, 170, 19);
+        color: white;
+        margin: 10px 0px;
+    }
+    
+    .SucessBox-show a {
+        color: white;
+    }
+    
+    .RegisterLinkPage a{
+        color: rgb(80, 2, 174);
+    }
+    
+    .BoxInput-inner-box {
+        display: block;
+        margin: 10px 0px;
+    }
+    
+    .BoxInput-inner-box p {
+        font-size: 18px;
+    }
+    
+    .BoxInput-inner-box input {
+        width: 100%;
+        font-size: 15px;
+        outline: none;
+        border: 1px solid black;
+        border-radius: 0px;
+        margin: 5px 0px;
+        padding: 10px;
+    }
+    
+    .HeaderLoginContent img {
+        width: 80px;
+        pointer-events: none;
+        margin: 10px 0px;
+    }
+    
+    .HeaderLoginContent h2 {
+        font-size: 30px;
+        text-align: left;
+    }
+    
+    .BoxButton-Confirm  {
+        text-align: center;
+    }
+    
+    .BoxButton-Confirm button{
+        color: white;
+        background-color: black;
+        border: none;
+        padding: 13px 100px;
+        margin: auto;
+        text-align: center; 
+        transition: 500ms;
+    }
+    
+    .BoxButton-Confirm button:hover {
+        cursor: pointer;
+        box-shadow: 5px 5px 0px gray;
+    }
+    
+    .HeaderLoginContent {
+        text-align: left;
+    }
+    
+    .LoginPage_Content-Login--box {
+        width: 100%;
+        padding: 00px 20px;
+        padding-bottom: 50px;
+        position: relative;
+        align-items: center;
+        margin-top: 5%;
+        
+    }
+    
+    .fixedHeader {
+        color: white;
+        position: absolute;
+        margin: auto;
+        text-align: center;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    .fixedHeader h1 {
+        font-size: 55px;
+        font-weight: 600;
+        text-shadow: 5px 5px 0px gray;
+        cursor: default;
+        pointer-events: none;
+        text-align: left;
+    }
 
 }

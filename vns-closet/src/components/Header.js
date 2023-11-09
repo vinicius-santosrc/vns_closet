@@ -126,7 +126,7 @@ export default function Header() {
                     <div className="HeaderMenuStyled">
                         <div></div>
                         <Link to={window.location.origin} className="Header-Styled-closet leftside-header">
-                            <img src={window.location.origin + "/arquivos/vss-closet-logo-io.png"} alt="" />
+                            <img src={window.location.origin + "/arquivos/vss-closet-logo-io.webp"} alt="" />
                             <h1>VNS CLOSET</h1>
                         </Link>
 
@@ -169,7 +169,7 @@ export default function Header() {
                 <div className="SacolaShow-Styled-Menu">
                     <div className="SacolaShow-Header-Styled">
                         <div className="SacolaIconVns">
-                            <img src={window.location.origin + "/arquivos/vss-closet-logo-io.png"} />
+                            <img src={window.location.origin + "/arquivos/vss-closet-logo-io.webp"} />
                         </div>
                         <div className="SacolaTitleH1-Styled">
                             <h1>MINHA SACOLA</h1>
@@ -197,9 +197,9 @@ export default function Header() {
                         </ul>
                     </div>
                     {SacolaItensShow && SacolaItensShow != '[]'  ? <div className="SacolaBottomCheckout">
-                        <h3>Subtotal: R${subtotal}</h3>
-                        <h3>Descontos: R${descontos}</h3>
-                        <h1>Total: <span>R${precototal}</span></h1>
+                        <h3>Subtotal: R${subtotal.toFixed(2)}</h3>
+                        <h3>Descontos: R${descontos.toFixed(2)}</h3>
+                        <h1>Total: <span>R${precototal.toFixed(2)}</span></h1>
                         <button className="CheckoutButtonSacola">
                             <span>IR PARA O CHECKOUT</span>
                         </button>
@@ -208,7 +208,7 @@ export default function Header() {
             </> : null}
             <header className="Header-Styled-Closet-Flexbox HeaderStyle">
                 <Link to={window.location.origin} className="Header-Styled-closet leftside-header">
-                    <img src={window.location.origin + "/arquivos/vss-closet-logo-io.png"} alt="" />
+                    <img src={window.location.origin + "/arquivos/vss-closet-logo-io.webp"} alt="" />
                     <h1>VNS CLOSET</h1>
                 </Link>
 

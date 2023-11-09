@@ -17,6 +17,8 @@ import CalcasBermudas from './pages/Categorias/CalcasBermudas';
 import Basquete from './pages/Categorias/Basquete';
 import Calcados from './pages/Categorias/Calcados';
 import ProdutoPage from './pages/ProdutoPage';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 
 
@@ -25,6 +27,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
+          
+          <Route path="/accounts/login" element={<Login />} /> 
+          <Route path="/accounts/register" element={<Register />} /> 
+
           <Route path='/' element={<Index />} />
           <Route path="/camisetas" element={<Camisetas />}></Route>
           <Route path="/workout" element={<Workout />}></Route>
