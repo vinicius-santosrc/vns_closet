@@ -56,7 +56,12 @@ export default function Login() {
         try {
             account.createEmailSession(Email, Password)
             .then((res) => {
-                window.location.href = window.location.origin
+                if(window.location.href.includes("checkout_continue")) {
+                    window.location.href = window.location.origin + "/checkout"
+                }
+                else {
+                    window.location.href = window.location.origin
+                }
             })
             .catch((error) => {
                 return Swal.fire({

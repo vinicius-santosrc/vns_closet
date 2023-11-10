@@ -57,7 +57,7 @@ header .leftside-header h1 {
 header .rightside-header {
     align-items: center;
     justify-content: space-between;
-    gap: 0px;
+    gap: 30px;
 
 }
 
@@ -65,11 +65,52 @@ header .rightside-header-mobile {
     display: none;
 }
 
+.MyAccount-Show-Page-styled {
+    display: flex;
+    padding: 0px 30px;
+}
+.MyAccount-Show-Page-styled li {
+    list-style: none
+}
+
+.MyAccount-Navigation-inner {
+    padding: 10px 00px;
+}
+
+.MyAccount--item {
+    
+    margin: 40px 0px;
+}
+
+
+.MyAccount--item a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 30px;
+    padding-right: 100px;
+    margin: 10px 0px;
+    font-size: 20px;
+    border-left: 2px solid black;
+}
+
+.MyAccount--item a:hover{
+}
+
+.Account-MainPageSelected-Form-Container {
+    margin: 20px 0px;
+}
+
+.Account-MainPageSelected-Form-Container {
+    border: 1px solid black;
+    padding: 20px;
+    width: 500px;
+}
+
 header .rightside-header a {
     color: var(--text-color);
     text-decoration: none;
     font-size: 25px;
-    margin-left: 30px;
+    gap: 20px;
     cursor: pointer;
 }
 
@@ -1026,6 +1067,25 @@ img.sun {
     width: 50px;
 }
 
+.AccountButton-flex-box {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 5px;
+
+}
+
+.AccountRedirect-styled {
+    align-items: center;
+}
+
+.AccountButton-flex-box h3{
+    font-size: 15px;
+}
+
+.AccountButton-flex-box p {
+    font-size: 12px;
+}
 
 @keyframes openSacola {
     0% {
@@ -1696,6 +1756,105 @@ img.sun {
     text-shadow: 5px 5px 0px gray;
     cursor: default;
     pointer-events: none;
+}
+
+.CheckoutPage-Steps-To-Finish {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    padding: 0px 30px;
+}
+
+.CheckoutStep {
+    background: rgb(243, 243, 243);
+    box-shadow: 5px 5px 0px rgb(138, 138, 138);
+    padding: 20px;
+}
+
+.CheckoutPage-InputBox {
+    padding: 10px 0px;
+}
+
+.CheckoutPage-InputBox input {
+    width: 100%;
+    border: none;
+    border-left: 2px solid;
+    padding: 10px 5px;
+    outline: none;
+    
+
+}
+
+.SacolaCheckoutPage .empty-Sacola-Show {
+    margin: auto;
+    text-align: center;
+
+}
+
+.SacolaCheckoutPage .empty-Sacola-Show img {
+    width: 450px;
+}
+
+.SacolaCheckoutPage .empty-Sacola-Show button{
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    width: 300px;
+    transition: 500ms;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.SacolaCheckoutPage .empty-Sacola-Show h1 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.SacolaCheckoutPage .empty-Sacola-Show button:hover {
+    
+    box-shadow: 5px 5px 0px gray;
+}
+
+.CheckoutPage-Products-Show {
+    padding: 10px 30px;
+    
+}
+
+.SacolaCheckoutPage {
+    padding: 0px;
+    margin: 10px 0px;
+}
+
+.leftSideSacola-show {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.SacolaShow--item h3{
+    font-size: 19px;
+}
+
+.SacolaShow--item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ButtonSacola--remove {
+    background-color: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
+
+
+.SacolaShow--item img {
+    width: 85px;
 }
 
 @media screen and (max-width: 980px) {
@@ -2902,4 +3061,110 @@ img.sun {
         text-align: left;
     }
 
+    .MyAccount-Show-Page-styled {
+        display: block;
+        padding: 0px 30px;
+    }
+    .MyAccount-Show-Page-styled li {
+        list-style: none
+    }
+    
+    .MyAccount-Navigation-inner {
+        padding: 10px 00px;
+    }
+    
+    .MyAccount--item {
+        
+        margin: 40px 0px;
+    }
+    
+    
+    .MyAccount--item a {
+        color: black;
+        text-decoration: none;
+        padding: 10px 30px;
+        padding-right: 100px;
+        margin: 10px 0px;
+        font-size: 20px;
+        border-left: 2px solid black;
+    }
+    
+    .MyAccount--item a:hover{
+    }
+    
+    .Account-MainPageSelected-Form-Container {
+        margin: 20px 0px;
+    }
+    
+    .Account-MainPageSelected-Form-Container {
+        border: 1px solid black;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .SacolaCheckoutPage img {
+        width: 350px;
+    }
+
+    .CheckoutPage-Steps-To-Finish {
+        display: block;
+        padding: 0px 20px;
+    }
+
+    .SacolaShow--item img {
+        width: 65px;
+    }
+
+    .CheckoutPage-Products-Show {
+        padding: 10px 20px;
+    }
+
+    .pconly {
+        display: none;
+    }
+
+    .leftSideSacola-show {
+        padding: 10px 0px;
+    }
+
+    .CheckoutStep {
+        margin-bottom: 20px;
+    }
+
+    .AccountShow-BottomHeaderStyled {
+        display: flex;
+        gap: 10px;
+        padding: 50px 20px;
+        padding-top: 20px;
+        position: absolute;
+        bottom: 0;
+        align-items: center;
+        width: 100%;
+        border-top: 1px solid lightgray;
+    }
+
+    .BottomHeaderStyled a {
+        color: black;
+    }
+
+    .AccountShow-BottomHeaderStyled h2 {
+        font-size: 15px;
+    }
+
+    .AccountShow-BottomHeaderStyled p {
+        font-size: 15px;
+        color: gray;
+    }
+
+    .AccountShow-BottomHeaderStyled i {
+        font-size: 45px;
+    }
+
+    .SacolaShow--item h3 {
+        font-size: 14px;
+    }
+
+    .SacolaContent--name p {
+        font-size: 12px;
+    }
 }

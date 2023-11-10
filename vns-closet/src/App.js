@@ -1,6 +1,6 @@
 /* HOOKS */
 
-import {Route, Routes, BrowserRouter} from 'react-router-dom'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 
 /* STYLES */
@@ -19,6 +19,8 @@ import Calcados from './pages/Categorias/Calcados';
 import ProdutoPage from './pages/ProdutoPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import MyAccount from './pages/Account/MyAccount';
+import Checkout from './pages/Checkout';
 
 
 
@@ -27,9 +29,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          
-          <Route path="/accounts/login" element={<Login />} /> 
-          <Route path="/accounts/register" element={<Register />} /> 
+
+          <Route path="/accounts/myaccount" element={<MyAccount />} />
+          <Route path="/accounts/login" element={<Login />} />
+          <Route path="/accounts/register" element={<Register />} />
 
           <Route path='/' element={<Index />} />
           <Route path="/camisetas" element={<Camisetas />}></Route>
@@ -39,6 +42,7 @@ function App() {
           <Route path="/basquete" element={<Basquete />}></Route>
           <Route path="/calcados" element={<Calcados />}></Route>
 
+          <Route path='/checkout' element={<Checkout />} />
           <Route path='/produtos/:PRODUTO_NOME' element={<ProdutoPage />}></Route>
         </Routes>
       </BrowserRouter>

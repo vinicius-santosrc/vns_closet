@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { account, databases } from "../lib/appwrite";
 
 
 export default function Header() {
     const [Menu, setMenu] = useState(null);
     const [Sacola, setSacola] = useState(false);
+
+    const [userLogged, setUserlogged] = useState(null)
+
+    const [Loading, setLoading] = useState(false)
 
     let [precototal, setprecototal] = useState(null)
     let [subtotal, setsubtotal] = useState(null)
@@ -41,12 +46,27 @@ export default function Header() {
 
     function removepos(index) {
         let JSONitens = JSON.parse(SacolaItensShow);
-    
+
         // Use o método splice para remover o item do array no local de armazenamento local
         JSONitens.splice(index, 1);
-    
+
         // Atualize o armazenamento local com o array modificado
         localStorage.setItem('s-vns-closet-fstorage-bagsc', JSON.stringify(JSONitens));
+    }
+
+    function LoadingWrapper() {
+        return (
+            <div className="Loading-Wrapper">
+                <div className="Loading-Content">
+                    <l-bouncy
+                        size="45"
+                        speed="1.75"
+                        color="black"
+                    ></l-bouncy>
+                    <p>Carregando</p>
+                </div>
+            </div>
+        )
     }
 
     async function getSacolaItens() {
@@ -95,6 +115,32 @@ export default function Header() {
 
     }
 
+    async function getAccount() {
+        setLoading(true)
+        try {
+            await account.get().then((r) => {
+                databases.getDocument(
+                    "65490ef281a42a311fd4",
+                    "654c3f326781694c82c3",
+                    r.$id
+                ).then((response) => {
+                    setUserlogged(response)
+                })
+
+            })
+            setLoading(false)
+        }
+        catch (error) {
+            setLoading(false)
+            return
+
+        }
+    }
+
+    useEffect(() => {
+        getAccount()
+    }, [])
+
     useEffect(() => {
         getSacolaItens()
     })
@@ -119,6 +165,8 @@ export default function Header() {
         }, 280);
     }
 
+
+
     async function openMenu() {
         setMenu(
             <nav className="NavigationMenuShow">
@@ -138,7 +186,7 @@ export default function Header() {
                     </div>
                     <div className="MiddleHeaderStyled">
                         <ul className="ListNavigationMenu">
-                            <li><Link to={window.location.origin + "/home"}>Workout</Link></li>
+                            <li><Link to={window.location.origin + "/workout"}>Workout</Link></li>
                             <li><Link to={window.location.origin + "/camisetas"}>Camisetas</Link></li>
                             <li><Link to={window.location.origin + "/futebol"}>Futebol</Link></li>
                             <li><Link to={window.location.origin + "/calcas&bermudas"}>Calças & Bermudas</Link></li>
@@ -150,6 +198,23 @@ export default function Header() {
 
                         </div>
                     </div>
+                    {userLogged ?
+                        <div className="BottomHeaderStyled">
+                            <Link to={window.location.origin + "/accounts/myaccount"}>
+                                <div className="AccountShow-BottomHeaderStyled">
+                                    <div className="LeftSide-BottomHeaderStyled">
+                                        <i className="fa-regular fa-address-card"></i>
+                                    </div>
+                                    <div className="RightSide-BottomHeaderStyled">
+                                        <h2>Minha conta</h2>
+                                        <p>Olá, {getName()}!</p>
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>
+                        :
+                        null
+                    }
                 </div>
             </nav>
         )
@@ -161,9 +226,38 @@ export default function Header() {
         }, 280);
 
     }
+
+    function getName() {
+        var nomeCompleto = userLogged.Nome;
+
+        // Encontrar a posição do primeiro espaço
+        var primeiroEspaco = nomeCompleto.indexOf(' ');
+
+        // Extrair o primeiro nome até o primeiro espaço
+        var primeiroNome = nomeCompleto.substring(0, primeiroEspaco);
+
+        // Exibir o primeiro nome
+        return primeiroNome;
+    }
+    useEffect(() => {
+        if (userLogged) {
+            getName()
+        }
+    }, [userLogged])
+
+    function gotoCheckout() {
+        if (userLogged) {
+            window.location.href = window.location.origin + "/checkout"
+        }
+        else {
+            window.location.href = window.location.origin + "/accounts/login?=checkout_continue"
+        }
+    }
+
     return (
         <>
             {Menu}
+            {Loading ? <LoadingWrapper /> : null}
             {Sacola ? <>
                 <div className="background-sacola-inner" onClick={closeSacola}></div>
                 <div className="SacolaShow-Styled-Menu">
@@ -184,23 +278,23 @@ export default function Header() {
                     </div>
                     <div className="SacolaItensInnerWrapper">
                         <ul className="ListSacolaItens">
-                            {SacolaItensShow && SacolaItensShow != '[]' 
-                            ?
-                            <>{SacolaItens}</>
-                            :
-                            <div className="noItemSacola">
-                                <h2>A sacola está vazia.</h2>
-                                <p>Você não adicionou nenhum item em sua sacola.</p>
-                                <button onClick={closeSacola}>PROCURAR ITENS</button>
-                            </div>}
-                            
+                            {SacolaItensShow && SacolaItensShow != '[]'
+                                ?
+                                <>{SacolaItens}</>
+                                :
+                                <div className="noItemSacola">
+                                    <h2>A sacola está vazia.</h2>
+                                    <p>Você não adicionou nenhum item em sua sacola.</p>
+                                    <button onClick={closeSacola}>PROCURAR ITENS</button>
+                                </div>}
+
                         </ul>
                     </div>
-                    {SacolaItensShow && SacolaItensShow != '[]'  ? <div className="SacolaBottomCheckout">
+                    {SacolaItensShow && SacolaItensShow != '[]' ? <div className="SacolaBottomCheckout">
                         <h3>Subtotal: R${subtotal.toFixed(2)}</h3>
                         <h3>Descontos: R${descontos.toFixed(2)}</h3>
                         <h1>Total: <span>R${precototal.toFixed(2)}</span></h1>
-                        <button className="CheckoutButtonSacola">
+                        <button onClick={gotoCheckout} className="CheckoutButtonSacola">
                             <span>IR PARA O CHECKOUT</span>
                         </button>
                     </div> : null}
@@ -224,20 +318,33 @@ export default function Header() {
                     </ul>
                 </div>
                 <div className="Header-Styled-closet rightside-header">
-                    <button className="AccountButton-styled ButtonWrapper-header-styled" title="Minha conta">
-                        <Link className="AccountRedirect-styled" to={window.location.origin + "/accounts/login"}>
-                            <span className="AccountButton-styled_IconContainer" aria-hidden="true">
-                                <i className="fa-regular fa-user"></i>
-                            </span>
-                        </Link>
-                    </button>
-                    <button className="FavoriteButton-styled ButtonWrapper-header-styled" title="Favoritos">
-                        <Link className="FavoriteRedirect-styled" to={window.location.origin + "/favorites"}>
-                            <span className="FavoriteButton-styled_IconContainer" aria-hidden="true">
-                                <i className="fa-regular fa-heart"></i>
-                            </span>
-                        </Link>
-                    </button>
+                    {userLogged ?
+                        <button className="AccountButton-styled ButtonWrapper-header-styled" title="Minha conta">
+                            <Link className="AccountRedirect-styled" to={window.location.origin + "/accounts/myaccount"}>
+                                <div className="AccountButton-flex-box">
+                                    <div className="AccountButton-LeftIconUser">
+                                        <span className="AccountButton-styled_IconContainer" aria-hidden="true">
+                                            <i className="fa-regular fa-user"></i>
+                                        </span>
+                                    </div>
+                                    <div className="AccountButton-Content-User">
+                                        <h3>Minha conta</h3>
+                                        <p>Olá, {getName()}.</p>
+                                    </div>
+
+                                </div>
+
+                            </Link>
+                        </button>
+                        :
+                        <button className="AccountButton-styled ButtonWrapper-header-styled" title="Minha conta">
+                            <Link className="AccountRedirect-styled" to={window.location.origin + "/accounts/login"}>
+                                <span className="AccountButton-styled_IconContainer" aria-hidden="true">
+                                    <i className="fa-regular fa-user"></i>
+                                </span>
+                            </Link>
+                        </button>
+                    }
                     <button className="CartButton-styled ButtonWrapper-header-styled" title="Sua sacola">
                         <Link className="CartRedirect-styled" onClick={openSacola}>
                             <span className="CartButton-styled_IconContainer" aria-hidden="true">
@@ -246,6 +353,7 @@ export default function Header() {
                         </Link>
                     </button>
                 </div>
+
                 <div className="Header-Styled-closet rightside-header-mobile">
                     <Link className="MenuRedirect-styled" onClick={openMenu}>
                         <button className="MenuButton-styled ButtonWrapper-header-styled" title="Minha conta">
