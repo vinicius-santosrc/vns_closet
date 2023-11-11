@@ -15,6 +15,11 @@ export default function Navigation() {
                     </Link>
                 </li>
                 <li className="MyAccount--item">
+                    <Link to={window.location.origin + "/accounts/myaccount/address"}>
+                        <span>Meus Endereços</span>
+                    </Link>
+                </li>
+                <li className="MyAccount--item">
                     <Link to={window.location.origin + "/accounts/myaccount/favorites"}>
                         <span>Favoritos</span>
                     </Link>

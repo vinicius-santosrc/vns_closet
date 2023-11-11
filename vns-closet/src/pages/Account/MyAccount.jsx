@@ -50,6 +50,8 @@ export default function MyAccount() {
         getAccount()
     }, [])
 
+
+    
     return (
         <>
             {Loading ? <LoadingWrapper /> : null}

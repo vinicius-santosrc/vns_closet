@@ -1402,6 +1402,35 @@ img.sun {
     padding-top: 1vh;
 }
 
+#selected {
+    box-shadow: 5px 5px 0px green;
+}
+
+.listsEnderecos-Checkout #selected {
+    border: 1px solid green;
+    box-shadow: none;
+}
+
+.EnderecosExists--CheckOut {
+    margin: 10px 0px;
+    text-align: center;
+    justify-content: center;
+}
+
+.EnderecosExists--CheckOut button {
+    background-color: black;
+    color: white;
+    padding: 10px 50px;
+    border: none;
+    margin: 10px 0px;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.EnderecosExists--CheckOut button:hover {
+    box-shadow: 5px 5px 0px gray;
+}
+
 .sacola-item a {
     color: red;
     cursor: pointer;
@@ -1758,6 +1787,52 @@ img.sun {
     pointer-events: none;
 }
 
+.EnderecoWrapper--item {
+    background: #e0dfdf;
+    box-shadow: 5px 5px 0px black;
+    padding: 15px 10px;
+    width: 300px;
+    cursor: pointer;
+    margin: 10px 0px;
+    list-style: none;
+}
+
+.listsEnderecos-Checkout .EnderecoWrapper--item {
+    background: white;
+    box-shadow: none;
+    padding: 15px 10px;
+    width: 100%;
+    cursor: pointer;
+    margin: 10px 0px;
+    border-radius: 5px;
+    list-style: none;
+    border: 1px solid rgb(194, 194, 194);
+}
+
+.EnderecoWrapper--newitem {
+    background: transparent;
+    border: 2px dashed green;
+    
+    padding: 15px 10px;
+    text-align: center;
+    color: green;
+    width: 300px;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.EnderecoWrapper--newitem:hover {
+    box-shadow: 5px 5px rgba(0, 128, 0, 0.593);
+}
+
+.EnderecosExists {
+    margin: 20px 0px;
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
 .CheckoutPage-Steps-To-Finish {
     display: flex;
     justify-content: space-between;
@@ -1766,9 +1841,86 @@ img.sun {
 }
 
 .CheckoutStep {
-    background: rgb(243, 243, 243);
-    box-shadow: 5px 5px 0px rgb(138, 138, 138);
+    background: transparent;
+    border: 1px solid gray;
+    border-radius: 10px;
     padding: 20px;
+    transition: 500ms;
+    width: 32%;
+
+}
+
+
+#disabled {
+    cursor: pointer;
+    opacity: .6;
+}
+
+.CheckBox-Payment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.CheckBox-Payment button {
+    width: 49%;
+    cursor: pointer;
+    border: 1px solid black;
+    color: black;
+    padding: 10px 0px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.totalPedido {
+    font-size: 13px;
+    margin: 20px 0px;
+}
+
+.codeQRCODE {
+    width: 100%;
+    
+}
+
+.paymentButtonWrapper button{
+    background-color: black;
+    color: black;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px 0px;
+    margin: 10px 0px;
+    cursor: pointer;
+    
+}
+
+#selectedButtonWrapper {
+    color: white;
+    background: black;
+
+}
+
+.PaymentPix {
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.buttonContinue button{
+    background: black;
+    color: white;
+    transition: 500ms;
+    border: none;
+    padding: 10px 50px;
+    cursor: pointer;
+
+}
+
+.buttonContinue button:hover {
+    box-shadow: 5px 5px 0px gray;
 }
 
 .CheckoutPage-InputBox {
@@ -3089,8 +3241,7 @@ img.sun {
         border-left: 2px solid black;
     }
     
-    .MyAccount--item a:hover{
-    }
+
     
     .Account-MainPageSelected-Form-Container {
         margin: 20px 0px;
@@ -3129,6 +3280,7 @@ img.sun {
 
     .CheckoutStep {
         margin-bottom: 20px;
+        width: 100%;
     }
 
     .AccountShow-BottomHeaderStyled {
@@ -3166,5 +3318,29 @@ img.sun {
 
     .SacolaContent--name p {
         font-size: 12px;
+    }
+
+    .EnderecosExists {
+        justify-content: left;
+    }
+
+    .EnderecoWrapper--item {
+        background: #e0dfdf;
+        box-shadow: 5px 5px 0px black;
+        padding: 15px 10px;
+        width: 100%;
+        cursor: pointer;
+    }
+    
+    .EnderecoWrapper--newitem {
+        background: transparent;
+        border: 2px dashed green;
+        
+        padding: 15px 10px;
+        text-align: center;
+        color: green;
+        width: 100%;
+        transition: 500ms;
+        cursor: pointer;
     }
 }
