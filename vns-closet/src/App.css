@@ -69,6 +69,7 @@ header .rightside-header-mobile {
     display: flex;
     padding: 0px 30px;
 }
+
 .MyAccount-Show-Page-styled li {
     list-style: none
 }
@@ -78,7 +79,7 @@ header .rightside-header-mobile {
 }
 
 .MyAccount--item {
-    
+
     margin: 40px 0px;
 }
 
@@ -93,8 +94,7 @@ header .rightside-header-mobile {
     border-left: 2px solid black;
 }
 
-.MyAccount--item a:hover{
-}
+.MyAccount--item a:hover {}
 
 .Account-MainPageSelected-Form-Container {
     margin: 20px 0px;
@@ -915,9 +915,9 @@ img.sun {
     height: 100%;
 }
 
-.HeaderMenuStyled button{
+.HeaderMenuStyled button {
     background-color: transparent;
-    padding:  0 10px;
+    padding: 0 10px;
     border: none;
     outline: none;
     color: black;
@@ -929,7 +929,7 @@ img.sun {
     overflow-y: auto;
 }
 
-.SacolaTitleH1-Styled h1{
+.SacolaTitleH1-Styled h1 {
     font-size: 22px;
 }
 
@@ -944,7 +944,7 @@ img.sun {
 }
 
 .Sacola_ButtonInnerWrapper:hover {
-   color: #827f7f;
+    color: #827f7f;
 }
 
 .SacolaShow-closing {
@@ -1010,7 +1010,7 @@ img.sun {
 
 .noItemSacola {
     text-align: center;
-    margin-top: 70%;    
+    margin-top: 70%;
 }
 
 
@@ -1031,7 +1031,7 @@ img.sun {
     align-items: center;
 }
 
-.HeaderSacolaShow--item button{
+.HeaderSacolaShow--item button {
     color: red;
     background-color: transparent;
     border: none;
@@ -1044,7 +1044,7 @@ img.sun {
     box-shadow: 5px 5px 0px gray;
 }
 
-.SacolaShow_PhotoURL__sacola--item img{
+.SacolaShow_PhotoURL__sacola--item img {
     width: 100px;
     cursor: pointer;
     box-shadow: 4px 4px 0px gray;
@@ -1056,7 +1056,7 @@ img.sun {
 
 .SacolasTamanho_Cor h4 {
     font-size: 14px;
-} 
+}
 
 .SacolaBottomCheckout {
     font-size: 12px;
@@ -1079,7 +1079,7 @@ img.sun {
     align-items: center;
 }
 
-.AccountButton-flex-box h3{
+.AccountButton-flex-box h3 {
     font-size: 15px;
 }
 
@@ -1457,6 +1457,62 @@ img.sun {
     letter-spacing: 2px;
 }
 
+#produtofinalizado {
+    color: green;
+}
+
+#produtoacaminho {
+    color: orange
+}
+
+.PreviewOrderUpside img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid lightgray;
+}
+
+.empty-Orders {
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    z-index: -1;
+}
+
+.empty-Orders img {
+    width: 500px;
+    object-fit: cover;
+
+}
+
+.button-buy-items {
+    background: black;
+    color: white;
+    padding: 10px 25px;
+    margin: 10px 0px;
+    border: none;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.button-buy-items:hover {
+    box-shadow: 5px 5px 0px gray;
+}
+
+.TopRecentOrders {
+    display: flex;
+    gap: 5px;
+    margin: 20px 0px;
+    overflow-x: scroll;
+    width: 1500px;
+}
+
+.spacerHeader {
+    margin: 20px 0px;
+}
 .informacoes-checkout input {
     background-color: var(--cinza);
     border: none;
@@ -1673,7 +1729,7 @@ img.sun {
     position: relative;
 }
 
-.LoginPage_BannerLeftSide-content img{
+.LoginPage_BannerLeftSide-content img {
     width: 95%;
     height: 90.6vh;
     position: absolute;
@@ -1701,7 +1757,7 @@ img.sun {
     color: white;
 }
 
-.RegisterLinkPage a{
+.RegisterLinkPage a {
     color: rgb(80, 2, 174);
 }
 
@@ -1735,17 +1791,17 @@ img.sun {
     text-align: left;
 }
 
-.BoxButton-Confirm  {
+.BoxButton-Confirm {
     text-align: center;
 }
 
-.BoxButton-Confirm button{
+.BoxButton-Confirm button {
     color: white;
     background-color: black;
     border: none;
     padding: 13px 100px;
     margin: auto;
-    text-align: center; 
+    text-align: center;
     transition: 500ms;
 }
 
@@ -1764,7 +1820,7 @@ img.sun {
     position: relative;
     align-items: center;
     margin-top: 5%;
-    
+
 }
 
 .fixedHeader {
@@ -1797,6 +1853,13 @@ img.sun {
     list-style: none;
 }
 
+.EnderecoWrapper--item button {
+    color: red;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
 .listsEnderecos-Checkout .EnderecoWrapper--item {
     background: white;
     box-shadow: none;
@@ -1812,7 +1875,7 @@ img.sun {
 .EnderecoWrapper--newitem {
     background: transparent;
     border: 2px dashed green;
-    
+
     padding: 15px 10px;
     text-align: center;
     color: green;
@@ -1850,6 +1913,86 @@ img.sun {
 
 }
 
+.Order--item {
+    border: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    width: 700px;
+
+}
+
+.UserOrders_ContentOrder {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.Order--item img {
+    width: 150px;
+}
+
+.Order--item a {
+    color: black;
+    text-decoration: none;
+}
+
+.UserOrders_ContentOrder--item-wrapper {
+    padding: 5px 0px;
+    width: 530px;
+}
+
+.btns-wrapper-button {
+    display: flex;
+    justify-content: right;
+    gap: 5px;
+}
+
+.btns-wrapper-button button {
+    background-color: black;
+    color: white;
+    padding: 5px 15px;
+    font-size: 14px;
+    border: none;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.btns-wrapper-button button:hover {
+    box-shadow: 3px 3px 0px gray;
+}
+
+.Order_State {
+    color: gray;
+}
+
+.OrderContent-iitem-rightside {
+    text-align: right;
+}
+
+.createNewAdress-InnerWrapper-Button button {
+    background-color: black;
+    color: white;
+    border: none;
+    margin: 10px 0px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.cancelAdress-InnerWrapper-Button button {
+    border: none;
+    color: black;
+    border-radius: 3px;
+    background-color: transparent;
+    border: 1px solid lightgray;
+    padding: 5px;
+    margin: 10px 0px;
+}
+
+.createNewAdress-InnerWrapper-Button button:hover {
+    box-shadow: 5px 5px 0px gray;
+}
 
 #disabled {
     cursor: pointer;
@@ -1880,10 +2023,10 @@ img.sun {
 
 .codeQRCODE {
     width: 100%;
-    
+
 }
 
-.paymentButtonWrapper button{
+.paymentButtonWrapper button {
     background-color: black;
     color: black;
     width: 100%;
@@ -1893,7 +2036,7 @@ img.sun {
     padding: 10px 0px;
     margin: 10px 0px;
     cursor: pointer;
-    
+
 }
 
 #selectedButtonWrapper {
@@ -1909,7 +2052,7 @@ img.sun {
 }
 
 
-.buttonContinue button{
+.buttonContinue button {
     background: black;
     color: white;
     transition: 500ms;
@@ -1933,7 +2076,7 @@ img.sun {
     border-left: 2px solid;
     padding: 10px 5px;
     outline: none;
-    
+
 
 }
 
@@ -1947,7 +2090,7 @@ img.sun {
     width: 450px;
 }
 
-.SacolaCheckoutPage .empty-Sacola-Show button{
+.SacolaCheckoutPage .empty-Sacola-Show button {
     background: black;
     color: white;
     border: none;
@@ -1964,13 +2107,13 @@ img.sun {
 }
 
 .SacolaCheckoutPage .empty-Sacola-Show button:hover {
-    
+
     box-shadow: 5px 5px 0px gray;
 }
 
 .CheckoutPage-Products-Show {
     padding: 10px 30px;
-    
+
 }
 
 .SacolaCheckoutPage {
@@ -1986,7 +2129,7 @@ img.sun {
     gap: 10px;
 }
 
-.SacolaShow--item h3{
+.SacolaShow--item h3 {
     font-size: 19px;
 }
 
@@ -3066,28 +3209,29 @@ img.sun {
         height: 100%;
     }
 
-    .SacolaBottomCheckout, .ListSacolaItens,  .SacolaShow-Header-Styled{
+    .SacolaBottomCheckout, .ListSacolaItens, .SacolaShow-Header-Styled {
         padding: 20px
     }
 
     @keyframes fecharSacola {
         0% {}
-    
+
         100% {
             transform: translateX(300%);
             -webkit-transform: translateX(300%);
             margin-left: 150%;
         }
     }
+
     .LoginPageContent {
         margin-bottom: -110px;
     }
-    
+
     .Login-Content-Box-Temp {
         display: block;
         justify-content: center;
     }
-    
+
     .LoginPage_BannerLeftSide-content {
         width: 100%;
         height: 87vh;
@@ -3096,8 +3240,8 @@ img.sun {
         background: black;
         position: relative;
     }
-    
-    .LoginPage_BannerLeftSide-content img{
+
+    .LoginPage_BannerLeftSide-content img {
         width: 95%;
         height: 90.6vh;
         position: absolute;
@@ -3107,12 +3251,12 @@ img.sun {
         filter: brightness(0.8);
         pointer-events: none;
     }
-    
+
     .RegisterLinkPage {
         text-align: right;
         margin: 10px 0px;
     }
-    
+
     .SucessBox-show {
         width: 100%;
         padding: 10px;
@@ -3120,24 +3264,24 @@ img.sun {
         color: white;
         margin: 10px 0px;
     }
-    
+
     .SucessBox-show a {
         color: white;
     }
-    
-    .RegisterLinkPage a{
+
+    .RegisterLinkPage a {
         color: rgb(80, 2, 174);
     }
-    
+
     .BoxInput-inner-box {
         display: block;
         margin: 10px 0px;
     }
-    
+
     .BoxInput-inner-box p {
         font-size: 18px;
     }
-    
+
     .BoxInput-inner-box input {
         width: 100%;
         font-size: 15px;
@@ -3147,41 +3291,41 @@ img.sun {
         margin: 5px 0px;
         padding: 10px;
     }
-    
+
     .HeaderLoginContent img {
         width: 80px;
         pointer-events: none;
         margin: 10px 0px;
     }
-    
+
     .HeaderLoginContent h2 {
         font-size: 30px;
         text-align: left;
     }
-    
-    .BoxButton-Confirm  {
+
+    .BoxButton-Confirm {
         text-align: center;
     }
-    
-    .BoxButton-Confirm button{
+
+    .BoxButton-Confirm button {
         color: white;
         background-color: black;
         border: none;
         padding: 13px 100px;
         margin: auto;
-        text-align: center; 
+        text-align: center;
         transition: 500ms;
     }
-    
+
     .BoxButton-Confirm button:hover {
         cursor: pointer;
         box-shadow: 5px 5px 0px gray;
     }
-    
+
     .HeaderLoginContent {
         text-align: left;
     }
-    
+
     .LoginPage_Content-Login--box {
         width: 100%;
         padding: 00px 20px;
@@ -3189,9 +3333,9 @@ img.sun {
         position: relative;
         align-items: center;
         margin-top: 5%;
-        
+
     }
-    
+
     .fixedHeader {
         color: white;
         position: absolute;
@@ -3203,7 +3347,7 @@ img.sun {
         z-index: 1;
         pointer-events: none;
     }
-    
+
     .fixedHeader h1 {
         font-size: 55px;
         font-weight: 600;
@@ -3217,20 +3361,21 @@ img.sun {
         display: block;
         padding: 0px 30px;
     }
+
     .MyAccount-Show-Page-styled li {
         list-style: none
     }
-    
+
     .MyAccount-Navigation-inner {
         padding: 10px 00px;
     }
-    
+
     .MyAccount--item {
-        
+
         margin: 40px 0px;
     }
-    
-    
+
+
     .MyAccount--item a {
         color: black;
         text-decoration: none;
@@ -3240,13 +3385,13 @@ img.sun {
         font-size: 20px;
         border-left: 2px solid black;
     }
-    
 
-    
+
+
     .Account-MainPageSelected-Form-Container {
         margin: 20px 0px;
     }
-    
+
     .Account-MainPageSelected-Form-Container {
         border: 1px solid black;
         padding: 20px;
@@ -3331,16 +3476,96 @@ img.sun {
         width: 100%;
         cursor: pointer;
     }
-    
+
     .EnderecoWrapper--newitem {
         background: transparent;
         border: 2px dashed green;
-        
+
         padding: 15px 10px;
         text-align: center;
         color: green;
         width: 100%;
         transition: 500ms;
         cursor: pointer;
+    }
+
+    .Order--item {
+        border: 1px solid lightgray;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+    }
+
+    .UserOrders_ContentOrder {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+    }
+
+    
+
+    .Order--item img {
+        width: 100px;
+    }
+
+    .Order--item a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .UserOrders_ContentOrder--item-wrapper {
+        padding: 5px 0px;
+        width: 100%;
+    }
+
+    .btns-wrapper-button {
+        display: flex;
+        justify-content: right;
+        gap: 5px;
+    }
+
+    .btns-wrapper-button button {
+        background-color: black;
+        color: white;
+        padding: 5px 15px;
+        font-size: 14px;
+        border: none;
+        transition: 500ms;
+        cursor: pointer;
+    }
+
+    .btns-wrapper-button button:hover {
+        box-shadow: 3px 3px 0px gray;
+    }
+
+    .Order_State {
+        color: gray;
+    }
+
+    .OrderContent-iitem-rightside {
+        text-align: right;
+    }
+
+    .TopRecentOrders {
+        display: flex;
+        gap: 5px;
+        margin: 20px 0px;
+        overflow-x: scroll;
+        width: 100%;
+    }
+
+    .PreviewOrderUpside img{
+        width: 100px;
+        height: 200px;
+        object-fit: cover;
+        border: 1px solid lightgray;
+    }
+
+    .empty-Orders img {
+        width: 100%;
+        object-fit: cover;
+    
     }
 }

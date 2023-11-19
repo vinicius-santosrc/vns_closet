@@ -22,6 +22,7 @@ import Register from './pages/Register';
 import MyAccount from './pages/Account/MyAccount';
 import Checkout from './pages/Checkout';
 import MyAccount_Adress from './pages/Account/MyAccount_Adress';
+import MyAccountOrders from './pages/Account/MyAccountOrders';
 
 
 
@@ -33,6 +34,7 @@ function App() {
 
           <Route path="/accounts/myaccount" element={<MyAccount />} />
           <Route path="/accounts/myaccount/address" element={<MyAccount_Adress />} />
+          <Route path='/accounts/myaccount/orders' element={<MyAccountOrders />}/>
 
           <Route path="/accounts/login" element={<Login />} />
           <Route path="/accounts/register" element={<Register />} />

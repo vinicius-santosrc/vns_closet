@@ -4,7 +4,7 @@ import HeaderCheckout from "../components/Checkout/HeaderCheckout"
 import { Link } from "react-router-dom";
 import QRCode from 'react-qr-code';
 import axios from 'axios';
-import { Query } from "appwrite";
+import { ID, Query } from "appwrite";
 import Swal from "sweetalert2";
 
 const stripe = require("stripe")('sk_test_51O8vzKFbchsk4huKOa3OpUgbsTQDJqfF0Hy91Er6gLaWiyOIAhJCOfQ1b1ZgkVTepeaBWACbbGq8Qg5BRlAprvaU00YamY0D3h');
@@ -13,6 +13,8 @@ const stripe = require("stripe")('sk_test_51O8vzKFbchsk4huKOa3OpUgbsTQDJqfF0Hy91
 export default function Checkout() {
     const [userLogged, setUserlogged] = useState(null);
     const [Loading, setLoading] = useState(false);
+
+    const [LoadingPayment, setPaymentLoading] = useState(false)
 
     //TOTAL PAGAMENTO CONSTS
 
@@ -267,17 +269,13 @@ export default function Checkout() {
     }
 
 
-    const formatarData = (data) => {
-        return data.toISOString().replace(/[-T:]/g, '').slice(0, -5);
-    };
-
     function changeStep(steptoChange) {
         if (Step > steptoChange) {
             setStep(steptoChange)
         }
     }
 
-    function checkoutCard() {
+    async function checkoutCard() {
         if (!userLogged || !ContatoTelefone || !enderecoSelected.UID_DOC) {
             return Swal.fire({
                 title: "FALHA NA FINALIZAÇÃO DA COMPRA!",
@@ -285,35 +283,84 @@ export default function Checkout() {
             });
         }
         else {
+            let JSONitens = JSON.parse(SacolaItensShow);  
+            setLoading(true)          
+            try {
+                function generateUniqueId() {
+                    // Gera uma string aleatória de 8 caracteres
+                    const randomString = Math.random().toString(16).substr(2, 8);
 
-            async function StripeCheckout() {
-                let amount = parseInt(totalPay);
+                    // Obtém um carácter de timestamp para garantir unicidade
+                    const timestampChar = Date.now().toString(16).substr(-4);
 
-                try {
-                    
+                    // Combina os dois para formar o ID único
+                    const uniqueId = randomString + timestampChar;
 
-                    // Criar o pagamento no Stripe
-                    const paymentIntent = await stripe.paymentIntents.create({
-                        amount,
-                        currency: 'BRL',
-                        description: 'VNSCLOSET: Finalização da compra',
-                        payment_method_types: ['card'],
-                        
-                    });
-
-                    console.log("Payment", paymentIntent);
-                    console.log("URL", paymentIntent.url)
-                    
-
-
-
-
-                } catch (error) {
-                    console.error("Erro ao criar o pagamento no Stripe:", error);
-                    // Lógica de tratamento de erro
+                    return uniqueId;
                 }
+
+                const orderUniqueId = generateUniqueId();
+
+                //CRIANDO PEDIDO
+                
+                await databases.createDocument(
+                    
+                    "65490ee5d6bbf552ae2b",
+                    "655a6bdb86d42ae38138",
+                    orderUniqueId,
+                    {
+                        adress_cep: enderecoSelected.CEP,
+                        adress: enderecoSelected.Endereco,
+                        adress_numero: enderecoSelected.Numero,
+                        adress_complementoref: enderecoSelected.Complemento_Ref,
+                        adress_estado: enderecoSelected.Estado,
+                        adress_cidade: enderecoSelected.Cidade,
+                        adress_bairro: enderecoSelected.Bairro,
+                        adress_destinatario: enderecoSelected.Destinatario,
+                        adress_uid_doc: enderecoSelected.UID_DOC,
+                        user_nome: userLogged.Nome,
+                        user_id: userLogged.$id,
+                        user_cpf: (userLogged.CPF).toString(),
+                        user_email: userLogged.Email,
+                        user_contact: ContatoTelefone,
+                        payment_option: "Cartao",
+                        order_situation: "Processando",
+                        order_totalprice: totalPay
+                    }
+                )
+                .then( async () => {
+                    //ADICIONANDO ITENS PARA O PEDIDO CRIADO
+                    JSONitens.map((res, i) => {
+                        databases.createDocument(
+                            "65490ee5d6bbf552ae2b",
+                            "655a6dcb1a7ac8089e51",
+                            ID.unique(),
+                            {
+                                product_name: res.name,
+                                product_color: res.cor,
+                                product_size: res.tamanho,
+                                product_desconto: res.desconto,
+                                product_price: res.price,
+                                product_total_price: res.price - res.desconto,
+                                product_image_show: res.foto,
+                                UID_ORDER: orderUniqueId
+                            }
+                        )
+                        .then((sucess) => {
+                            setLoading(false)
+                            window.location.href = window.location.origin + "/accounts/myaccount/orders"
+                        })
+                    })
+                    
+                })
+                
+                    
+
             }
-            StripeCheckout()
+            catch (error) {
+                alert(error)
+                setLoading(false)
+            }
 
         }
     }
