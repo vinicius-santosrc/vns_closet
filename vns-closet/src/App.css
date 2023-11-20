@@ -96,6 +96,10 @@ header .rightside-header-mobile {
 
 .MyAccount--item a:hover {}
 
+.MainPageSelected {
+    width: 70%;
+}
+
 .Account-MainPageSelected-Form-Container {
     margin: 20px 0px;
 }
@@ -1860,6 +1864,95 @@ img.sun {
     cursor: pointer;
 }
 
+.OrderContent-order-product--wrap {
+    display: flex;
+    gap: 10px;
+}
+
+.OrderContent-order-product--wrap img {
+    width: 100px;
+}
+
+.StateOrder {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.topPage-State-Order {
+    width: 100%;
+}
+
+.Order_Stage_Bottom {
+    width: 100%;
+    position: relative;
+}
+
+.line_stage_bottom {
+    background-color: #d4d4d4;
+    height: 10px;
+    margin: 10px 0px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+#STAGE0 {
+    position: absolute;
+    height: 10px;
+    width: 3%;
+    background-color: black;
+    z-index: 2;
+    top: 0;
+    border-radius: 10px;
+}
+
+#STAGE1 {
+    position: absolute;
+    height: 10px;
+    width: 34%;
+    background-color: black;
+    z-index: 2;
+    border-radius: 10px;
+    top: 0;
+}
+
+#STAGE2 {
+    position: absolute;
+    height: 10px;
+    width: 66%;
+    background-color: black;
+    z-index: 2;
+    top: 0;
+    border-radius: 10px;
+}
+
+#STAGE3 {
+    position: absolute;
+    height: 10px;
+    width: 100%;
+    background-color: black;
+    z-index: 2;
+    top: 0;
+    border-radius: 10px;
+}
+
+.Order_Stage i {
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 100%;
+    font-size: 30px;
+}
+
+.Order-Address-ShowContent, .Order-Content-Show-Resume--items {
+    padding: 10px;
+    margin: 20px 0px;
+    border: 1px solid lightgray;
+}
+
+.Order-User-ShowContent {
+    margin: 20px 0px;
+}
+
 .listsEnderecos-Checkout .EnderecoWrapper--item {
     background: white;
     box-shadow: none;
@@ -3497,6 +3590,11 @@ img.sun {
 
     }
 
+    .Order_Stage p {
+        font-size: 12px;
+        text-align: center;
+    }
+
     .UserOrders_ContentOrder {
         display: flex;
         align-items: center;
@@ -3567,5 +3665,49 @@ img.sun {
         width: 100%;
         object-fit: cover;
     
+    }
+
+    .MainPageSelected {
+        width: 100%;
+    }
+
+    #STAGE0 {
+        position: absolute;
+        height: 10px;
+        width: 3%;
+        background-color: black;
+        z-index: 2;
+        top: 0;
+        border-radius: 10px;
+    }
+    
+    #STAGE1 {
+        position: absolute;
+        height: 10px;
+        width: 34%;
+        background-color: black;
+        z-index: 2;
+        border-radius: 10px;
+        top: 0;
+    }
+    
+    #STAGE2 {
+        position: absolute;
+        height: 10px;
+        width: 66%;
+        background-color: black;
+        z-index: 2;
+        top: 0;
+        border-radius: 10px;
+    }
+    
+    #STAGE3 {
+        position: absolute;
+        height: 10px;
+        width: 100%;
+        background-color: black;
+        z-index: 2;
+        top: 0;
+        border-radius: 10px;
     }
 }

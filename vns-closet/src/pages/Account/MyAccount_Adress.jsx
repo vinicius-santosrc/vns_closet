@@ -143,6 +143,7 @@ export default function MyAccount_Adress() {
     }
 
     async function gG(C) {
+        setLoading(true)
         try {
             const response = await axios.get(`https://viacep.com.br/ws/${C}/json/`);
 
@@ -151,14 +152,17 @@ export default function MyAccount_Adress() {
             setEstado(response.data.uf);
             setCidade(response.data.localidade);
             setCEP(C)
+            setLoading(false)
         } catch (error) {
             if (C) {
                 alert("CEP NÃO ENCONTRADO")
             }
+            setLoading(false)
         }
     }
 
     async function Cr_ad() {
+        setLoading(true)
         try {
             if(CEP, Endereco, Numero, ComplementoERef, Estado, Cidade, Bairro, Destinatario, userLogged) {
                 await databases.createDocument(
@@ -178,6 +182,7 @@ export default function MyAccount_Adress() {
                     }
                 )
                     .then((sucess) => {
+                        setLoading(false)
                         Swal.fire({
                             position: "center",
                             icon: "success",
@@ -193,8 +198,17 @@ export default function MyAccount_Adress() {
         }
         catch (error) {
             console.log(error)
+            setLoading(false)
         }
     }
+
+    function c() {
+        window.document.title = "VNS CLOSET: Meus Endereços"
+    }
+
+    useEffect(() => {
+        c()
+    })
 
     return (
         <>

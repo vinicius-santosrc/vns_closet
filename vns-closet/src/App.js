@@ -23,6 +23,7 @@ import MyAccount from './pages/Account/MyAccount';
 import Checkout from './pages/Checkout';
 import MyAccount_Adress from './pages/Account/MyAccount_Adress';
 import MyAccountOrders from './pages/Account/MyAccountOrders';
+import MyAccountOrders_Order from './pages/Account/MyAccountOrders_Order';
 
 
 
@@ -35,6 +36,8 @@ function App() {
           <Route path="/accounts/myaccount" element={<MyAccount />} />
           <Route path="/accounts/myaccount/address" element={<MyAccount_Adress />} />
           <Route path='/accounts/myaccount/orders' element={<MyAccountOrders />}/>
+          <Route path='/accounts/myaccount/orders/:IDpedido' element={<MyAccountOrders_Order />}/>
+
 
           <Route path="/accounts/login" element={<Login />} />
           <Route path="/accounts/register" element={<Register />} />

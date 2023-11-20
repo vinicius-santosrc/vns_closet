@@ -58,6 +58,7 @@ export default function MyAccountOrders() {
     }, [])
 
     async function g_tOD() {
+        setLoading(true)
         try {
             const orders = await databases.listDocuments(
                 "65490ee5d6bbf552ae2b",
@@ -82,7 +83,6 @@ export default function MyAccountOrders() {
                     );
 
                     const previewImage = products.documents.length > 0 ? products.documents[0].product_image_show : null;
-
                     return {
                         order,
                         previewImage
@@ -93,7 +93,7 @@ export default function MyAccountOrders() {
             setRecentOrders(
                 ordersWithPreviews.map(({ order, previewImage }) => (
                     <div className="PreviewOrderUpside" key={`orderid-${order.$id}`}>
-                        <Link to={`/orders/${order.$id}`}>
+                        <Link to={`/accounts/myaccount/orders/${order.$id}`}>
                             {previewImage && <img src={previewImage} alt="Preview" />}
                         </Link>
                     </div>
@@ -104,7 +104,7 @@ export default function MyAccountOrders() {
             setAllOrders(
                 ordersWithPreviews.map(({ order, previewImage }) => (
                     <div className="Order--item" key={`orderid-${order.$id}`}>
-                        <Link to={`/orders/${order.$id}`}>
+                        <Link to={`/accounts/myaccount/orders/${order.$id}`}>
                             <li className="UserOrders_ContentOrder">
                                 <div className="OrderContent--photo">
                                     {previewImage && <img src={previewImage} alt="Preview" />}
@@ -149,8 +149,10 @@ export default function MyAccountOrders() {
                     </div>
                 ))
             );
+            setLoading(false)
         } catch (error) {
             // Trate o erro de alguma maneira, se necessário
+            setLoading(false)
         }
     }
 
@@ -160,6 +162,14 @@ export default function MyAccountOrders() {
         g_tOD()
 
     }, [userLogged])
+
+    function c() {
+        window.document.title = "VNS CLOSET: Meus pedidos"
+    }
+
+    useEffect(() => {
+        c()
+    }, [])
 
 
 
@@ -174,10 +184,18 @@ export default function MyAccountOrders() {
                     {AllOrders == ""
                         ?
                         <div className="empty-Orders">
-                            <img src={window.location.origin + "/arquivos/undraw_empty_re_opql.svg"} />
-                            <h2>Um vazio incomodativo...</h2>
-                            <p>Não foi encontrado nenhum pedido</p>
-                            <button onClick={() => {window.location.href = window.location.origin}} className="button-buy-items"><span>FAZER UMAS COMPRAS</span></button>
+                            {Loading ?
+                                null
+                                :
+                                <>
+                                    <img src={window.location.origin + "/arquivos/undraw_empty_re_opql.svg"} />
+                                    <h2>Um vazio incomodativo...</h2>
+                                    <p>Não foi encontrado nenhum pedido</p>
+                                    <button onClick={() => { window.location.href = window.location.origin }} className="button-buy-items"><span>FAZER UMAS COMPRAS</span></button>
+                                </>
+                            }
+
+
                         </div>
                         :
                         <>

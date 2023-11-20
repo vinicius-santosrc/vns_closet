@@ -50,6 +50,14 @@ export default function MyAccount() {
         getAccount()
     }, [])
 
+    function c() {
+        window.document.title = "VNS CLOSET: Minha conta"
+    }
+
+    useEffect(() => {
+        c()
+    })
+
 
     
     return (
