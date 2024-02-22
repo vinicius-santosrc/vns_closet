@@ -6,7 +6,7 @@ import Header from "../../components/Header";
 export default function CalcadosBermudas() {
 
     function ChangePageName() {
-        document.title = 'VNS CLOSET: Calças & Bermudas';
+        document.title = 'COM TODO RESPEITO - CALÇAS';
     }
 
     useEffect(() => {

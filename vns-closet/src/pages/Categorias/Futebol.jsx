@@ -6,7 +6,7 @@ import Header from "../../components/Header";
 export default function Futebol() {
 
     function ChangePageName() {
-        document.title = 'VNS CLOSET: Futebol';
+        document.title = 'COM TODO RESPEITO - FUTEBOL';
     }
 
     useEffect(() => {

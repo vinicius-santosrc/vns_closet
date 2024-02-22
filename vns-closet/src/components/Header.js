@@ -175,7 +175,6 @@ export default function Header() {
                         <div></div>
                         <Link to={window.location.origin} className="Header-Styled-closet leftside-header">
                             <img src={window.location.origin + "/arquivos/vss-closet-logo-io.webp"} alt="" />
-                            <h1>VNS CLOSET</h1>
                         </Link>
 
                         <button onClick={closeMenu}>
@@ -186,12 +185,10 @@ export default function Header() {
                     </div>
                     <div className="MiddleHeaderStyled">
                         <ul className="ListNavigationMenu">
-                            <li><Link to={window.location.origin + "/workout"}>Workout</Link></li>
                             <li><Link to={window.location.origin + "/camisetas"}>Camisetas</Link></li>
-                            <li><Link to={window.location.origin + "/futebol"}>Futebol</Link></li>
-                            <li><Link to={window.location.origin + "/calcas&bermudas"}>Calças & Bermudas</Link></li>
-                            <li><Link to={window.location.origin + "/basquete"}>Basquete</Link></li>
-                            <li><Link to={window.location.origin + "/calcados"}>Calçados</Link></li>
+                            <li><Link to={window.location.origin + "/moletons"}>Moletons</Link></li>
+                            <li><Link to={window.location.origin + "/bones"}>Bonés</Link></li>
+                            <li><Link to={window.location.origin + "/calcas"}>Calças</Link></li>
 
                         </ul>
                         <div>
@@ -300,23 +297,23 @@ export default function Header() {
                     </div> : null}
                 </div>
             </> : null}
+
             <header className="Header-Styled-Closet-Flexbox HeaderStyle">
+                <div className="Header-Styled-closet rightside-header-mobile">
+                    <Link className="MenuRedirect-styled" onClick={openMenu}>
+                        <button className="MenuButton-styled ButtonWrapper-header-styled" title="Minha conta">
+                            <span className="MenuButton-styled_IconContainer" aria-hidden="true">
+                                <i className="fa-solid fa-bars"></i>
+                            </span>
+                        </button>
+                    </Link>
+                </div>
+
                 <Link to={window.location.origin} className="Header-Styled-closet leftside-header">
                     <img src={window.location.origin + "/arquivos/vss-closet-logo-io.webp"} alt="" />
-                    <h1>VNS CLOSET</h1>
+                    <h1>COM TODO RESPEITO</h1>
                 </Link>
 
-                <div className="Header-Styled-closet center-header">
-                    <ul className="CentralizedStyledHeader">
-                        <li><Link to={window.location.origin + "/workout"}>Workout</Link></li>
-                        <li><Link to={window.location.origin + "/camisetas"}>Camisetas</Link></li>
-                        <li><Link to={window.location.origin + "/futebol"}>Futebol</Link></li>
-                        <li><Link to={window.location.origin + "/calcas&bermudas"}>Calças e Bermudas</Link></li>
-                        <li><Link to={window.location.origin + "/basquete"}>Basquete</Link></li>
-                        <li><Link to={window.location.origin + "/calcados"}>Calçados</Link></li>
-
-                    </ul>
-                </div>
                 <div className="Header-Styled-closet rightside-header">
                     {userLogged ?
                         <button className="AccountButton-styled ButtonWrapper-header-styled" title="Minha conta">
@@ -355,13 +352,6 @@ export default function Header() {
                 </div>
 
                 <div className="Header-Styled-closet rightside-header-mobile">
-                    <Link className="MenuRedirect-styled" onClick={openMenu}>
-                        <button className="MenuButton-styled ButtonWrapper-header-styled" title="Minha conta">
-                            <span className="MenuButton-styled_IconContainer" aria-hidden="true">
-                                <i className="fa-solid fa-bars"></i>
-                            </span>
-                        </button>
-                    </Link>
                     <Link className="CartRedirect-styled" onClick={openSacola}>
                         <button className="CartButton-styled ButtonWrapper-header-styled" title="Sua sacola">
                             <span className="CartButton-styled_IconContainer" aria-hidden="true">

@@ -203,7 +203,7 @@ export default function MyAccount_Adress() {
     }
 
     function c() {
-        window.document.title = "VNS CLOSET: Meus Endereços"
+        window.document.title = "COM TODO RESPEITO: Meus Endereços"
     }
 
     useEffect(() => {

@@ -164,7 +164,7 @@ export default function MyAccountOrders() {
     }, [userLogged])
 
     function c() {
-        window.document.title = "VNS CLOSET: Meus pedidos"
+        window.document.title = "COM TODO RESPEITO: Meus pedidos"
     }
 
     useEffect(() => {

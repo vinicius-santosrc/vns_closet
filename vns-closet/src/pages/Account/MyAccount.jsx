@@ -51,7 +51,7 @@ export default function MyAccount() {
     }, [])
 
     function c() {
-        window.document.title = "VNS CLOSET: Minha conta"
+        window.document.title = "COM TODO RESPEITO: Minha conta"
     }
 
     useEffect(() => {

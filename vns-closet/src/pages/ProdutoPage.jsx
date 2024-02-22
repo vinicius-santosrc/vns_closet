@@ -117,7 +117,7 @@ export default function ProdutoPage() {
 
     function changePageName() {
         if (Product.url) {
-            document.title = Product.nome + ' / VNS CLOSET';
+            document.title = Product.nome + ' COM TODO RESPEITO';
         }
     }
 

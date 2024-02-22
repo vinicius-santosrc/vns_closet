@@ -40,7 +40,7 @@ export default function BannerPageCalcas_Bermudas() {
               
             </section>
             <section className="Results-of-Type-Select">
-                <label className="caminho">VNS-CLOSET{(window.location.pathname).toUpperCase()}</label>
+                <label className="caminho">COM-TODO-RESPEITO{(window.location.pathname).toUpperCase()}</label>
                 <h2>Mostrando {QuantidadeProdutos} de Calças e Bermudas</h2>
             </section>
         </>

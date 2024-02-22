@@ -56,7 +56,7 @@ export default function MyAccountOrders_Order() {
     }, [])
 
     function c() {
-        window.document.title = "VNS CLOSET: Pedido"
+        window.document.title = "COM TODO RESPEITO: Pedido"
     }
 
     useEffect(() => {

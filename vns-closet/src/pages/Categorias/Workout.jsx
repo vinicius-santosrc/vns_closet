@@ -6,7 +6,7 @@ import Header from "../../components/Header";
 export default function Workout() {
 
     function ChangePageName() {
-        document.title = 'VNS CLOSET: Workout';
+        document.title = 'COM TODO RESPEITO - WORKOUT';
     }
 
     useEffect(() => {

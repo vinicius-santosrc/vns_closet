@@ -34,7 +34,7 @@ header {
 }
 
 header img {
-    width: 50px;
+    width: 70px;
 }
 
 header .leftside-header {
@@ -199,7 +199,7 @@ header .rightside-header a {
 
 .banner-landing-page img {
     width: 100%;
-    height: 900px;
+    height: 750px;
     object-fit: cover;
     transition: 500ms;
     cursor: pointer;
@@ -279,8 +279,8 @@ header .rightside-header a {
 .content-info-website .image-rightside img {
     position: absolute;
     right: 2vw;
-    width: 18vw;
-    top: 34vh;
+    width: 13vw;
+    top: 45vh;
     transform: rotateZ(20deg);
     animation: images 1s ease-in-out;
     /* animation: imagespos 10s infinite linear; */
@@ -433,6 +433,8 @@ header .rightside-header a {
     margin-right: 3px;
     margin-bottom: 3px;
     width: 566px;
+    height: 566px;
+    object-fit: cover;
     transition: 500ms;
 }
 
@@ -862,7 +864,7 @@ img.sun {
 
 @keyframes openmenu {
     0% {
-        margin-left: 150%;
+        margin-left: -150%;
     }
 
     100% {}
@@ -1128,7 +1130,7 @@ img.sun {
     0% {}
 
     100% {
-        margin-left: 150%;
+        margin-left: -150%;
     }
 }
 
@@ -2264,7 +2266,7 @@ img.sun {
     }
 
     header img {
-        width: 30px;
+        width: 75px;
     }
 
     header .leftside-header {
@@ -2277,6 +2279,7 @@ img.sun {
         font-size: 15px;
         letter-spacing: 7px;
         font-weight: 500;
+        display: none
     }
 
     header .rightside-header {
@@ -2609,6 +2612,8 @@ img.sun {
         margin-right: 3px;
         margin-bottom: 3px;
         width: 186px;
+        height: 186px;
+        object-fit: cover;
         transition: 500ms;
     }
 
@@ -3526,6 +3531,7 @@ img.sun {
         gap: 10px;
         padding: 50px 20px;
         padding-top: 20px;
+        padding-bottom: 80px;
         position: absolute;
         bottom: 0;
         align-items: center;

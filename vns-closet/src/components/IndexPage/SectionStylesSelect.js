@@ -7,14 +7,11 @@ export default function SectionStylesSelect() {
                 <h1>VOCÊ VAI AMAR NOSSOS ESTILOS</h1>
             </div>
             <div className="styles-cards">
-                <Link to={window.location.origin + "/workout"}><img src="arquivos/workout-card.webp" alt="" /></Link>
                 <Link to={window.location.origin + "/camisetas"}><img src="arquivos/camisetas-card.webp" alt="" /></Link>
+                <Link to={window.location.origin + "/moletons"}><img src="arquivos/moletons-card.webp" alt="" /></Link>
                 <div className="break"></div>
-                <Link to={window.location.origin + "/futebol"}><img src="arquivos/futebol-card.webp" alt="" /></Link>
-                <Link to={window.location.origin + "/calcas&bermudas"}><img src="arquivos/calcas&bermudas-card.webp" alt="" /></Link>
-                <div className="break"></div>
-                <Link to={window.location.origin + "/basquete"}><img src="arquivos/basquete-card.webp" alt="" /></Link>
-                <Link to={window.location.origin + "/calcados"}><img src="arquivos/calcados-card.webp" alt="" /></Link>
+                <Link to={window.location.origin + "/calcas"}><img src="arquivos/calcas&bermudas-card.webp" alt="" /></Link>
+                <Link to={window.location.origin + "/bones"}><img src="arquivos/bones-card.webp" alt="" /></Link>
             </div>
         </section>
     )

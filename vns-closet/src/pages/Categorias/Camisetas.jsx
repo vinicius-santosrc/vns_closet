@@ -6,7 +6,7 @@ import Header from "../../components/Header";
 export default function Camisetas() {
 
     function ChangePageName() {
-        document.title = 'VNS CLOSET: Camisetas';
+        document.title = 'COM TODO RESPEITO - CAMISETAS';
     }
 
     useEffect(() => {

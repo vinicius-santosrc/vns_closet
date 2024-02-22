@@ -10,7 +10,7 @@ import SectionStylesSelect from "../components/IndexPage/SectionStylesSelect"
 
 export default function Index() {
     function ChangePageName() {
-        document.title = 'VNS CLOSET: Seu Visual é a nossa prioridade';
+        document.title = 'COM TODO RESPEITO - CTR';
     }
 
     useEffect(() => {

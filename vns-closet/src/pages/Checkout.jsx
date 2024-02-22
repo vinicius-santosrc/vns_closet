@@ -265,7 +265,7 @@ export default function Checkout() {
     }
 
     function c() {
-        window.document.title = "VNS CLOSET: Finalização da compra"
+        window.document.title = "COM TODO RESPEITO: Finalização da compra"
     }
 
 

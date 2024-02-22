@@ -41,7 +41,7 @@ export default function BannerPageCamisas() {
                
             </section>
             <section className="Results-of-Type-Select">
-                <label className="caminho">VNS-CLOSET{(window.location.pathname).toUpperCase()}</label>
+                <label className="caminho">COM-TODO-RESPEITO{(window.location.pathname).toUpperCase()}</label>
                 <h2>Mostrando {QuantidadeProdutos} de camisetas</h2>
             </section>
         </>
